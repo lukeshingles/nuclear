@@ -80,7 +80,7 @@ jobs:
     - name: Install base dependencies
       run: |
         conda install -n tardis tox codecov tox-conda
-        source activate tardis
+        conda activate tardis
         pip install tox
         # conda install -c conda-forge tox-conda
     - name: Test with tox
