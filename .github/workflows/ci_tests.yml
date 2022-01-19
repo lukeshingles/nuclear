@@ -79,7 +79,9 @@ jobs:
 
     - name: Install base dependencies
       run: |
+        conda install virtualenv
         conda install tox codecov tox-conda
+        pip install tox
         # conda install -c conda-forge tox-conda
     - name: Test with tox
       run: |
