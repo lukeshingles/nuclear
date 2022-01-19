@@ -80,6 +80,7 @@ jobs:
     - name: Install base dependencies
       run: |
         conda install tox codecov
+        pip instal tox-conda
     - name: Test with tox
       run: |
         tox -e ${{ matrix.toxenv }}
