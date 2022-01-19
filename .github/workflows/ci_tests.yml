@@ -71,6 +71,18 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python }}
+
+    - name: Get environment file
+      run: curl -o tardis_env3.yml https://raw.githubusercontent.com/tardis-sn/tardis/master/tardis_env3.yml
+
+    - name: Setup TARDIS environment
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+          environment-file: tardis_env3.yml
+          activate-environment: tardis
+          channels: conda-forge, defaults
+          mamba-version: "*"
+
     - name: Install base dependencies
       run: |
         python -m pip install --upgrade pip
