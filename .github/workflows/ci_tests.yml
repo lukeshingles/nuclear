@@ -80,7 +80,7 @@ jobs:
     - name: Install base dependencies
       run: |
         conda install tox codecov tox-conda virtualenv
-        pip install tox-conda
+        # pip install tox-conda
         # conda install -c conda-forge tox-conda
     - name: Test with tox
       run: |
